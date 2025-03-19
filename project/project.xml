@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iRICProject version="4.1.0.6960" solverName="Debug_solver_3D" solverVersion="1.1.240091302" timeFormat="elapsed|SS sec" customTimeFormat="" offsetX="0" offsetY="0" separateResult="false">
+    <CgnsFileList current="Case1">
+        <CgnsFileEntry filename="Case1" comment=""/>
+    </CgnsFileList>
+    <MeasuredDatas/>
+    <CalculationResult currentStep="500">
+        <Base dimension="3">
+            <Zone name="iRICZone"/>
+        </Base>
+    </CalculationResult>
+    <PostProcessors>
+        <PostProcessor ref="subwindows/post3dwindow1.xml"/>
+    </PostProcessors>
+    <Backgrounds/>
+    <DefaultColorMapSettings/>
+    <PreProcessorWindow ref="subwindows/preprocessor.xml"/>
+    <SolverConsoleWindow minimized="false" maximized="false" left="30" top="30" width="700" height="500" backgroundColor="#c8c8c8"/>
+    <PostProcessorFactory>
+        <WindowCount name="post3dwindow" value="1"/>
+    </PostProcessorFactory>
+</iRICProject>

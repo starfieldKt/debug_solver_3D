@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PostProcessor type="post3dwindow" index="1" objectBrowserVisible="true" backgroundColor="#ffffff" minimized="false" maximized="true" left="700" top="0" width="270" height="257">
+    <Camera positionX="0.594697" positionY="3.9572" positionZ="1.15744" focalpointX="0.654757" focalpointY="0.685363" focalpointZ="0.459149" viewupX="0.940393" viewupY="-0.0543874" viewupZ="0.335714" roll="105.049" parallelscale="1.85639" parallelprojection="true"/>
+    <DataModel ZScale="1" isExpanded="false">
+        <GridType checkState="2" isExpanded="true" name="Debug_solver_3D">
+            <Zones>
+                <Zone checkState="2" isExpanded="true" name="iRICZone">
+                    <Shape checkState="2" isExpanded="true" color="#000000" shape="0" indexVisible="false" indexTextSettingFontFamily="2" indexTextSettingFontColor="#000000" indexTextSettingFontSize="15" indexTextSettingFontIsBold="false" indexTextSettingFontIsItalic="false" indexTextSettingFontIsShadow="false"/>
+                    <ScalarNodeV4 checkState="2" isExpanded="true">
+                        <ContourGroup target="node_real" checkState="0" isExpanded="true" drawContourLines="false" contourLineWidth="1" contourMode="0" numberOfValues="10" lighting="false" opacityEnabled="true" opacityPercent="100" transitionMode="0" valueMode="1" autoValueRange="true" minValue="0" maxValue="1" fillUppeer="true" fillLower="true" colorTableMinValue="0" visible="true" direction="1" barAutoWidth="false" barWidth="30" barAlign="1" title="node_real" autoNumberOfLabels="true" numberOfLabels="5" labelSkipRate="1" labelFormat="%5.2f" titleFont="Century Gothic,14,-1,5,50,0,0,0,0,0,Regular" labelFont="Century Gothic,14,-1,5,50,0,0,0,0,0,Regular" titleColor="#000000" labelColor="#000000" backgroundColor="#ffffff" backgroundOpacityEnabled="true" backgroundOpacityPercent="20" showBorder="true" position="7" horizontalMarginRatio="0" verticalMarginRatio="0.1" autoSize="false" width="300" height="200">
+                            <Item value="0" color="#0000ff" transparent="false"/>
+                            <Item value="0.25" color="#00ffff" transparent="false"/>
+                            <Item value="0.5" color="#00ff00" transparent="false"/>
+                            <Item value="0.75" color="#ffff00" transparent="false"/>
+                            <Item value="1" color="#ff0000" transparent="false"/>
+                            <FaceSetting checkState="2" isExpanded="false" caption="面1" enabled="true" direction="1" iMin="0" iMax="10" jMin="10" jMax="10" kMin="0" kMax="10"/>
+                            <FaceSetting checkState="2" isExpanded="false" caption="面2" enabled="true" direction="2" iMin="0" iMax="10" jMin="0" jMax="10" kMin="0" kMax="0"/>
+                            <FaceSetting checkState="2" isExpanded="false" caption="面3" enabled="true" direction="0" iMin="0" iMax="0" jMin="0" jMax="10" kMin="0" kMax="10"/>
+                        </ContourGroup>
+                    </ScalarNodeV4>
+                    <ScalarCellV4 checkState="0" isExpanded="true">
+                        <ContourGroup target="cell_real" checkState="0" isExpanded="true" transitionMode="0" valueMode="1" autoValueRange="true" minValue="0" maxValue="1" fillUppeer="true" fillLower="true" colorTableMinValue="0" visible="true" direction="1" barAutoWidth="false" barWidth="30" barAlign="1" title="cell_real" autoNumberOfLabels="true" numberOfLabels="5" labelSkipRate="1" labelFormat="%5.2f" titleFont="Century Gothic,14,-1,5,50,0,0,0,0,0,Regular" labelFont="Century Gothic,14,-1,5,50,0,0,0,0,0,Regular" titleColor="#000000" labelColor="#000000" backgroundColor="#ffffff" backgroundOpacityEnabled="true" backgroundOpacityPercent="20" showBorder="true" position="7" horizontalMarginRatio="0" verticalMarginRatio="0.1" autoSize="false" width="300" height="200">
+                            <Item value="0" color="#0000ff" transparent="false"/>
+                            <Item value="0.25" color="#00ffff" transparent="false"/>
+                            <Item value="0.5" color="#00ff00" transparent="false"/>
+                            <Item value="0.75" color="#ffff00" transparent="false"/>
+                            <Item value="1" color="#ff0000" transparent="false"/>
+                            <RangeSetting checkState="0" isExpanded="false" caption="Range1" enabled="true" iMin="0" iMax="9" jMin="0" jMax="9" kMin="0" kMax="9"/>
+                        </ContourGroup>
+                    </ScalarCellV4>
+                    <ScalarIFaceV4 checkState="0" isExpanded="true">
+                        <ContourGroup target="iface_real" checkState="2" isExpanded="true" transitionMode="0" valueMode="1" autoValueRange="true" minValue="0" maxValue="1" fillUppeer="true" fillLower="true" colorTableMinValue="0" visible="true" direction="1" barAutoWidth="false" barWidth="30" barAlign="1" title="iface_real" autoNumberOfLabels="true" numberOfLabels="5" labelSkipRate="1" labelFormat="%5.2f" titleFont="Century Gothic,14,-1,5,50,0,0,0,0,0,Regular" labelFont="Century Gothic,14,-1,5,50,0,0,0,0,0,Regular" titleColor="#000000" labelColor="#000000" backgroundColor="#ffffff" backgroundOpacityEnabled="true" backgroundOpacityPercent="20" showBorder="true" position="7" horizontalMarginRatio="0" verticalMarginRatio="0.1" autoSize="false" width="300" height="200">
+                            <Item value="0" color="#0000ff" transparent="false"/>
+                            <Item value="0.25" color="#00ffff" transparent="false"/>
+                            <Item value="0.5" color="#00ff00" transparent="false"/>
+                            <Item value="0.75" color="#ffff00" transparent="false"/>
+                            <Item value="1" color="#ff0000" transparent="false"/>
+                            <RangeSetting checkState="0" isExpanded="false" caption="Range1" enabled="true" iMin="0" iMax="10" jMin="0" jMax="9" kMin="0" kMax="9"/>
+                        </ContourGroup>
+                    </ScalarIFaceV4>
+                    <ScalarJFaceV4 checkState="0" isExpanded="false">
+                        <ContourGroup target="jface_real" checkState="2" isExpanded="true" transitionMode="0" valueMode="1" autoValueRange="true" minValue="0" maxValue="1" fillUppeer="true" fillLower="true" colorTableMinValue="0" visible="true" direction="1" barAutoWidth="false" barWidth="30" barAlign="1" title="jface_real" autoNumberOfLabels="true" numberOfLabels="5" labelSkipRate="1" labelFormat="%5.2f" titleFont="Century Gothic,14,-1,5,50,0,0,0,0,0,Regular" labelFont="Century Gothic,14,-1,5,50,0,0,0,0,0,Regular" titleColor="#000000" labelColor="#000000" backgroundColor="#ffffff" backgroundOpacityEnabled="true" backgroundOpacityPercent="20" showBorder="true" position="7" horizontalMarginRatio="0" verticalMarginRatio="0.1" autoSize="false" width="300" height="200">
+                            <Item value="0" color="#0000ff" transparent="false"/>
+                            <Item value="0.25" color="#00ffff" transparent="false"/>
+                            <Item value="0.5" color="#00ff00" transparent="false"/>
+                            <Item value="0.75" color="#ffff00" transparent="false"/>
+                            <Item value="1" color="#ff0000" transparent="false"/>
+                            <RangeSetting checkState="2" isExpanded="false" caption="Range1" enabled="true" iMin="0" iMax="9" jMin="0" jMax="10" kMin="0" kMax="9"/>
+                        </ContourGroup>
+                    </ScalarJFaceV4>
+                    <Isosurfaces checkState="2" isExpanded="true"/>
+                    <ArrowGroupV4 checkState="0" isExpanded="true">
+                        <ArrowGroup target="vector" checkState="2" isExpanded="true" attribute="vector" colorMode="0" customColor="#000000" colorAttribute="" lengthMode="0" standardValue="1" legendLength="100" minimumValue="0.001" arrowSize="8" arrowLineWidth="1" visible="true" title="vector" titleFont="MS UI Gothic,11,-1,5,50,0,0,0,0,0" lengthFormat="%5.2f" lengthFont="MS UI Gothic,11,-1,5,50,0,0,0,0,0" titleColor="#000000" lengthColor="#000000" backgroundColor="#ffffff" backgroundOpacityEnabled="true" backgroundOpacityPercent="20" showBorder="true" position="7" horizontalMarginRatio="0.25" verticalMarginRatio="0.05" autoSize="false" width="160" height="100">
+                            <Arrow checkState="2" isExpanded="false" enabled="true" direction="2" iMin="0" iMax="10" jMin="0" jMax="10" kMin="0" kMax="0" samplingMode="1" iSampleRate="1" jSampleRate="1" kSampleRate="1" attribute="vector" colorMode="0" customColor="#000000" colorAttribute="node_integer" lengthMode="0" standardValue="1" legendLength="100" minimumValue="0.001" arrowSize="8" arrowLineWidth="1" visible="true" title="" titleFont="MS UI Gothic,11,-1,5,50,0,0,0,0,0" lengthFormat="%5.2f" lengthFont="MS UI Gothic,11,-1,5,50,0,0,0,0,0" titleColor="#000000" lengthColor="#000000" backgroundColor="#ffffff" backgroundOpacityEnabled="true" backgroundOpacityPercent="20" showBorder="true" position="7" horizontalMarginRatio="0.25" verticalMarginRatio="0.05" autoSize="false" width="160" height="100"/>
+                        </ArrowGroup>
+                    </ArrowGroupV4>
+                    <StreamlineGroup checkState="2" isExpanded="true" solution="">
+                        <StartPosition samplingMode="0" skipRate="1" subdivideRate="1" enabled="true" direction="0" iMin="0" iMax="0" jMin="0" jMax="10" kMin="0" kMax="10" color="#000000" width="1"/>
+                    </StreamlineGroup>
+                    <ParticleGroup checkState="2" isExpanded="true" solution="vector" generationMode="0" timeMode="1" timeSamplingRate="2" timeDivision="5" arbitraryTimes="">
+                        <StartPosition samplingMode="0" skipRate="1" subdivideRate="1" enabled="true" direction="0" iMin="5" iMax="5" jMin="0" jMax="10" kMin="0" kMax="10" color="#000000" pointSize="3"/>
+                    </ParticleGroup>
+                    <SolverParticlesGroupV4 checkState="2" isExpanded="true">
+                        <ParticleGroup name="particle" checkState="2" isExpanded="true">
+                            <ScalarGroup checkState="2" isExpanded="true" mapping="1" color="#000000" value="" opacityEnabled="true" opacityPercent="100" size="7">
+                                <Scalar name="particle_vector (magnitude)" checkState="0" isExpanded="false" transitionMode="0" valueMode="1" autoValueRange="true" minValue="0" maxValue="1" fillUppeer="true" fillLower="true" colorTableMinValue="0" visible="true" direction="1" barAutoWidth="false" barWidth="30" barAlign="1" title="particle_vector (絶対値)" autoNumberOfLabels="true" numberOfLabels="5" labelSkipRate="1" labelFormat="%5.2f" titleFont="Century Gothic,14,-1,5,50,0,0,0,0,0,Regular" labelFont="Century Gothic,14,-1,5,50,0,0,0,0,0,Regular" titleColor="#000000" labelColor="#000000" backgroundColor="#ffffff" backgroundOpacityEnabled="true" backgroundOpacityPercent="20" showBorder="true" position="7" horizontalMarginRatio="0" verticalMarginRatio="0.1" autoSize="false" width="300" height="200">
+                                    <Item value="0" color="#0000ff" transparent="false"/>
+                                    <Item value="0.25" color="#00ffff" transparent="false"/>
+                                    <Item value="0.5" color="#00ff00" transparent="false"/>
+                                    <Item value="0.75" color="#ffff00" transparent="false"/>
+                                    <Item value="1" color="#ff0000" transparent="false"/>
+                                </Scalar>
+                                <Scalar name="particle_vector_x (magnitude)" checkState="0" isExpanded="false" transitionMode="0" valueMode="1" autoValueRange="true" minValue="0" maxValue="1" fillUppeer="true" fillLower="true" colorTableMinValue="0" visible="true" direction="1" barAutoWidth="false" barWidth="30" barAlign="1" title="particle_vector_x (絶対値)" autoNumberOfLabels="true" numberOfLabels="5" labelSkipRate="1" labelFormat="%5.2f" titleFont="Century Gothic,14,-1,5,50,0,0,0,0,0,Regular" labelFont="Century Gothic,14,-1,5,50,0,0,0,0,0,Regular" titleColor="#000000" labelColor="#000000" backgroundColor="#ffffff" backgroundOpacityEnabled="true" backgroundOpacityPercent="20" showBorder="true" position="7" horizontalMarginRatio="0" verticalMarginRatio="0.1" autoSize="false" width="300" height="200">
+                                    <Item value="0" color="#0000ff" transparent="false"/>
+                                    <Item value="0.25" color="#00ffff" transparent="false"/>
+                                    <Item value="0.5" color="#00ff00" transparent="false"/>
+                                    <Item value="0.75" color="#ffff00" transparent="false"/>
+                                    <Item value="1" color="#ff0000" transparent="false"/>
+                                </Scalar>
+                                <Scalar name="particle_vector_y (magnitude)" checkState="0" isExpanded="false" transitionMode="0" valueMode="1" autoValueRange="true" minValue="0" maxValue="1" fillUppeer="true" fillLower="true" colorTableMinValue="0" visible="true" direction="1" barAutoWidth="false" barWidth="30" barAlign="1" title="particle_vector_y (絶対値)" autoNumberOfLabels="true" numberOfLabels="2" labelSkipRate="1" labelFormat="%5.2f" titleFont="Century Gothic,14,-1,5,50,0,0,0,0,0,Regular" labelFont="Century Gothic,14,-1,5,50,0,0,0,0,0,Regular" titleColor="#000000" labelColor="#000000" backgroundColor="#ffffff" backgroundOpacityEnabled="true" backgroundOpacityPercent="20" showBorder="true" position="7" horizontalMarginRatio="0" verticalMarginRatio="0.1" autoSize="false" width="300" height="200">
+                                    <Item value="0" color="#0000ff" transparent="false"/>
+                                    <Item value="0.25" color="#00ffff" transparent="false"/>
+                                    <Item value="0.5" color="#00ff00" transparent="false"/>
+                                    <Item value="0.75" color="#ffff00" transparent="false"/>
+                                    <Item value="1" color="#ff0000" transparent="false"/>
+                                </Scalar>
+                                <Scalar name="particle_vector_z (magnitude)" checkState="0" isExpanded="false" transitionMode="0" valueMode="1" autoValueRange="true" minValue="0" maxValue="1" fillUppeer="true" fillLower="true" colorTableMinValue="0" visible="true" direction="1" barAutoWidth="false" barWidth="30" barAlign="1" title="particle_vector_z (絶対値)" autoNumberOfLabels="true" numberOfLabels="2" labelSkipRate="1" labelFormat="%5.2f" titleFont="Century Gothic,14,-1,5,50,0,0,0,0,0,Regular" labelFont="Century Gothic,14,-1,5,50,0,0,0,0,0,Regular" titleColor="#000000" labelColor="#000000" backgroundColor="#ffffff" backgroundOpacityEnabled="true" backgroundOpacityPercent="20" showBorder="true" position="7" horizontalMarginRatio="0" verticalMarginRatio="0.1" autoSize="false" width="300" height="200">
+                                    <Item value="0" color="#0000ff" transparent="false"/>
+                                    <Item value="0.25" color="#00ffff" transparent="false"/>
+                                    <Item value="0.5" color="#00ff00" transparent="false"/>
+                                    <Item value="0.75" color="#ffff00" transparent="false"/>
+                                    <Item value="1" color="#ff0000" transparent="false"/>
+                                </Scalar>
+                            </ScalarGroup>
+                            <VectorGroup checkState="2" isExpanded="true">
+                                <VectorGroup target="particle_vector" checkState="2" isExpanded="false" samplingMode="1" samplingRate="2" samplingNumber="100" attribute="particle_vector" colorMode="0" customColor="#000000" colorAttribute="particle_vector (magnitude)" lengthMode="1" standardValue="1" legendLength="100" minimumValue="0.001" arrowSize="8" arrowLineWidth="3" visible="true" title="particle_vector" titleFont="MS UI Gothic,11,-1,5,50,0,0,0,0,0" lengthFormat="%5.2f" lengthFont="MS UI Gothic,11,-1,5,50,0,0,0,0,0" titleColor="#000000" lengthColor="#000000" backgroundColor="#ffffff" backgroundOpacityEnabled="true" backgroundOpacityPercent="20" showBorder="true" position="7" horizontalMarginRatio="0.3821" verticalMarginRatio="0.0607" autoSize="false" width="160" height="100"/>
+                                <VectorGroup target="particle_vector_x" checkState="2" isExpanded="false" samplingMode="1" samplingRate="2" samplingNumber="100" attribute="particle_vector_x" colorMode="0" customColor="#ff0000" colorAttribute="particle_vector (magnitude)" lengthMode="1" standardValue="1" legendLength="100" minimumValue="0.001" arrowSize="8" arrowLineWidth="3" visible="true" title="particle_vector_x" titleFont="MS UI Gothic,11,-1,5,50,0,0,0,0,0" lengthFormat="%5.2f" lengthFont="MS UI Gothic,11,-1,5,50,0,0,0,0,0" titleColor="#000000" lengthColor="#000000" backgroundColor="#ffffff" backgroundOpacityEnabled="true" backgroundOpacityPercent="20" showBorder="true" position="7" horizontalMarginRatio="0.1165" verticalMarginRatio="0.0724" autoSize="false" width="160" height="100"/>
+                                <VectorGroup target="particle_vector_y" checkState="2" isExpanded="false" samplingMode="1" samplingRate="2" samplingNumber="100" attribute="particle_vector_y" colorMode="0" customColor="#00aa00" colorAttribute="particle_vector (magnitude)" lengthMode="1" standardValue="1" legendLength="100" minimumValue="0.001" arrowSize="8" arrowLineWidth="3" visible="true" title="particle_vector_y" titleFont="MS UI Gothic,11,-1,5,50,0,0,0,0,0" lengthFormat="%5.2f" lengthFont="MS UI Gothic,11,-1,5,50,0,0,0,0,0" titleColor="#000000" lengthColor="#000000" backgroundColor="#ffffff" backgroundOpacityEnabled="true" backgroundOpacityPercent="20" showBorder="true" position="7" horizontalMarginRatio="0.12" verticalMarginRatio="0.2078" autoSize="false" width="160" height="100"/>
+                                <VectorGroup target="particle_vector_z" checkState="2" isExpanded="false" samplingMode="1" samplingRate="2" samplingNumber="100" attribute="particle_vector_z" colorMode="0" customColor="#0000ff" colorAttribute="particle_vector (magnitude)" lengthMode="1" standardValue="1" legendLength="100" minimumValue="0.001" arrowSize="8" arrowLineWidth="3" visible="true" title="particle_vector_z" titleFont="MS UI Gothic,11,-1,5,50,0,0,0,0,0" lengthFormat="%5.2f" lengthFont="MS UI Gothic,11,-1,5,50,0,0,0,0,0" titleColor="#000000" lengthColor="#000000" backgroundColor="#ffffff" backgroundOpacityEnabled="true" backgroundOpacityPercent="20" showBorder="true" position="7" horizontalMarginRatio="0.1179" verticalMarginRatio="0.1396" autoSize="false" width="160" height="100"/>
+                            </VectorGroup>
+                        </ParticleGroup>
+                    </SolverParticlesGroupV4>
+                    <StringResult checkState="2" isExpanded="true">
+                        <StringResult fontColor="#000000" font="Times New Roman,16,-1,5,50,0,0,0,0,0,Regular" backgroundColor="#c0c0c0" position="4" horizontalMarginRatio="0" verticalMarginRatio="0" autoSize="true" width="100" height="100">
+                            <Script>return &quot;&quot;;</Script>
+                        </StringResult>
+                    </StringResult>
+                </Zone>
+            </Zones>
+        </GridType>
+        <Title checkState="2" isExpanded="true" title="" fontFamily="0" fontColor="#000000" fontSize="20" fontIsBold="false" fontIsItalic="false" fontIsShadow="false"/>
+        <Time checkState="2" isExpanded="true" useProjectSetting="true" timeFormat="elapsed|SS sec" customFormat="" showTimeZone="false" fontFamily="0" fontColor="#000000" fontSize="13" fontIsBold="false" fontIsItalic="false" fontIsShadow="false"/>
+        <Axes checkState="2" isExpanded="true"/>
+        <Logo isExpanded="true" imageSize="1" position="7" horizontalMarginRatio="0.01" verticalMarginRatio="0.01" autoSize="true" width="100" height="100"/>
+    </DataModel>
+</PostProcessor>

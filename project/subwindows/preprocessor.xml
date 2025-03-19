@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreProcessorWindow objectBrowserVisible="true" backgroundColor="#ffffff" minimized="false" maximized="false" left="0" top="0" width="700" height="500">
+    <Camera positionX="0.5" positionY="0.5" positionZ="200" focalpointX="0.5" focalpointY="0.5" focalpointZ="0" viewupX="0" viewupY="1" viewupZ="0" roll="0" parallelscale="0.707107" parallelprojection="true"/>
+    <DataModel isExpanded="false">
+        <BackgroundImages checkState="2" isExpanded="true"/>
+        <GridType checkState="2" isExpanded="false" name="Debug_solver_3D">
+            <ColormapSettings/>
+            <GeoData checkState="2" isExpanded="true">
+                <GeoDataGroup checkState="2" isExpanded="true" name="_referenceinformation" enabled="false" activeVariation="">
+                    <GeoData checkState="2" isExpanded="false" type="realBackground" name="background" caption="デフォルト" mapped="true"/>
+                </GeoDataGroup>
+            </GeoData>
+            <HydraulicData isExpanded="false">
+                <HydraulicDataGroup isExpanded="false" name="waterelevation">
+                    <HydraulicData isExpanded="false" name="wse1" caption="WSE"/>
+                </HydraulicDataGroup>
+            </HydraulicData>
+            <Region checkState="2" isExpanded="false" zoneName="iRICZone" caption="領域">
+                <GridCreatingCondition checkState="2" isExpanded="true" name="SuperSimpleGridGenerator"/>
+                <Grid checkState="2" isExpanded="true">
+                    <Shape checkState="2" isExpanded="false" color="#000000" shape="1" indexVisible="false" indexTextSettingFontFamily="2" indexTextSettingFontColor="#000000" indexTextSettingFontSize="15" indexTextSettingFontIsBold="false" indexTextSettingFontIsItalic="false" indexTextSettingFontIsShadow="false"/>
+                    <NodeAttributes checkState="0" isExpanded="false" renderMode="0" lineWidth="5" pointSize="5" opacityEnabled="true" opacityPercent="50"/>
+                    <CellAttributes checkState="0" isExpanded="false" lineWidth="5" opacityEnabled="true" opacityPercent="50"/>
+                    <IEdgeAttributes checkState="0" isExpanded="false" lineWidth="5" opacityEnabled="true" opacityPercent="50"/>
+                    <JEdgeAttributes checkState="0" isExpanded="false" lineWidth="5" opacityEnabled="true" opacityPercent="50"/>
+                    <CrossSectionWindows/>
+                </Grid>
+            </Region>
+        </GridType>
+        <MeasuredDatas checkState="2" isExpanded="true"/>
+        <InputCondition isExpanded="false" isSet="true"/>
+        <Axes checkState="2" isExpanded="true"/>
+        <DistanceMeasures checkState="2" isExpanded="true"/>
+        <TmsBackground checkState="2" isExpanded="true" target=""/>
+        <Logo isExpanded="true" imageSize="1" position="7" horizontalMarginRatio="0.01" verticalMarginRatio="0.01" autoSize="true" width="100" height="100"/>
+    </DataModel>
+</PreProcessorWindow>
