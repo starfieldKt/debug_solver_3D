@@ -12,22 +12,22 @@ print("----------Start----------")
 
 # iRICで動かす時用
 # =============================================================================
-# if len(sys.argv) < 2:
-#     print("Error: CGNS file name not specified.")
-#     exit()
+if len(sys.argv) < 2:
+    print("Error: CGNS file name not specified.")
+    exit()
 
-# cgns_name = sys.argv[1]
+cgns_name = sys.argv[1]
 
-# print("CGNS file name: " + cgns_name)
+print("CGNS file name: " + cgns_name)
 
 # # CGNSをオープン
-# fid = iric.cg_iRIC_Open(cgns_name, iric.IRIC_MODE_MODIFY)
+fid = iric.cg_iRIC_Open(cgns_name, iric.IRIC_MODE_MODIFY)
 
 # コマンドラインで動かす時用
 # =============================================================================
 
 # CGNSをオープン
-fid = iric.cg_iRIC_Open("./project/Case1.cgn", iric.IRIC_MODE_MODIFY)
+# fid = iric.cg_iRIC_Open("./project/Case1.cgn", iric.IRIC_MODE_MODIFY)
 
 # 分割保存したい場合はこれを有効にする
 # os.environ['IRIC_SEPARATE_OUTPUT'] = '1'
@@ -99,26 +99,32 @@ iric.cg_iRIC_Write_Grid3d_Coords(fid, isize, jsize, ksize, grid_x_arr_3d.flatten
 
 # 計算結果を格納する配列を初期化
 # インデックス番号をそのまま値とする
-result_node_real = np.arange(isize*jsize*ksize, dtype=np.float64).reshape(isize, jsize, ksize)
-result_node_integer = np.arange(isize*jsize*ksize, dtype=np.int32).reshape(isize, jsize, ksize)
-result_cell_real = np.arange((isize-1)*(jsize-1)*(ksize-1), dtype=np.float64).reshape(isize-1, jsize-1, ksize-1)
-result_cell_integer = np.arange((isize-1)*(jsize-1)*(ksize-1), dtype=np.int32).reshape(isize-1, jsize-1, ksize-1)
-result_iedge_real = np.arange(isize*(jsize-1)*ksize, dtype=np.float64).reshape(isize, jsize-1, ksize)
-result_iedge_integer = np.arange(isize*(jsize-1)*ksize, dtype=np.int32).reshape(isize, jsize-1, ksize)
-result_jedge_real = np.arange((isize-1)*jsize*ksize, dtype=np.float64).reshape(isize-1, jsize, ksize)
-result_jedge_integer = np.arange((isize-1)*jsize*ksize, dtype=np.int32).reshape(isize-1, jsize, ksize)
+# ノード用 [isize, jsize, ksize]
+node_i, node_j, node_k = np.indices((isize, jsize, ksize))
+
+# セル用 [isize-1, jsize-1, ksize-1]
+cell_i, cell_j, cell_k = np.indices((isize-1, jsize-1, ksize-1))
+
+# i-face用 [isize, jsize-1, ksize]
+iface_i, iface_j, iface_k = np.indices((isize, jsize-1, ksize))
+
+# j-face用 [isize-1, jsize, ksize]
+jface_i, jface_j, jface_k = np.indices((isize-1, jsize, ksize))
+
+# k-face用 [isize, jsize, ksize-1]
+kface_i, kface_j, kface_k = np.indices((isize, jsize, ksize - 1))
 
 # ベクトルはx方向はインデックスi/isize、y方向はインデックスj/jsize、z方向はインデックスk/ksize
-resurt_vector_x = np.zeros((isize, jsize, ksize), dtype=np.float64)
-resurt_vector_y = np.zeros((isize, jsize, ksize), dtype=np.float64)
-resurt_vector_z = np.zeros((isize, jsize, ksize), dtype=np.float64)
+result_vector_x = np.zeros((isize, jsize, ksize), dtype=np.float64)
+result_vector_y = np.zeros((isize, jsize, ksize), dtype=np.float64)
+result_vector_z = np.zeros((isize, jsize, ksize), dtype=np.float64)
 
 for i in range(isize):
-    resurt_vector_x[i, :, :] = i/isize
+    result_vector_x[i, :, :] = i/isize
 for j in range(jsize):
-    resurt_vector_y[:, j, :] = j/jsize
+    result_vector_y[:, j, :] = j/jsize
 for k in range(ksize):
-    resurt_vector_z[:, :, k] = k/ksize
+    result_vector_z[:, :, k] = k/ksize
 
 i_tmp = 0
 j_tmp = 0
@@ -156,33 +162,51 @@ for t in range(0, time_end+1):
     # 各種値の出力
     iric.cg_iRIC_Write_Sol_Start(fid)
     iric.cg_iRIC_Write_Sol_Time(fid, float(t))
-    iric.cg_iRIC_Write_Sol_Node_Real(fid,"node_real", result_node_real.flatten(order='F'))
-    iric.cg_iRIC_Write_Sol_Node_Integer(fid,"node_integer", result_node_integer.flatten(order='F'))
-    iric.cg_iRIC_Write_Sol_Cell_Real(fid,"cell_real", result_cell_real.flatten(order='F')) 
-    iric.cg_iRIC_Write_Sol_Cell_Integer(fid,"cell_integer", result_cell_integer.flatten(order='F'))
-    iric.cg_iRIC_Write_Sol_IFace_Real(fid,"iface_real", result_iedge_real.flatten(order='F'))
-    iric.cg_iRIC_Write_Sol_IFace_Integer(fid,"iface_integer", result_iedge_integer.flatten(order='F'))
-    iric.cg_iRIC_Write_Sol_JFace_Real(fid,"jface_real", result_jedge_real.flatten(order='F'))
-    iric.cg_iRIC_Write_Sol_JFace_Integer(fid,"jface_integer", result_jedge_integer.flatten(order='F'))
-    iric.cg_iRIC_Write_Sol_Node_Real(fid,"vectorX", resurt_vector_x.flatten(order='F'))
-    iric.cg_iRIC_Write_Sol_Node_Real(fid,"vectorY", resurt_vector_y.flatten(order='F'))
-    iric.cg_iRIC_Write_Sol_Node_Real(fid,"vectorZ", resurt_vector_z.flatten(order='F'))
+    iric.cg_iRIC_Write_Sol_Node_Real(fid,"vectorX", result_vector_x.flatten(order='F'))
+    iric.cg_iRIC_Write_Sol_Node_Real(fid,"vectorY", result_vector_y.flatten(order='F'))
+    iric.cg_iRIC_Write_Sol_Node_Real(fid,"vectorZ", result_vector_z.flatten(order='F'))
+
+    # ノード i,j,k
+    iric.cg_iRIC_Write_Sol_Node_Integer(fid, "node_index_i", node_i.flatten(order='F'))
+    iric.cg_iRIC_Write_Sol_Node_Integer(fid, "node_index_j", node_j.flatten(order='F'))
+    iric.cg_iRIC_Write_Sol_Node_Integer(fid, "node_index_k", node_k.flatten(order='F'))
+
+    # セル i,j,k
+    iric.cg_iRIC_Write_Sol_Cell_Integer(fid, "cell_index_i", cell_i.flatten(order='F'))
+    iric.cg_iRIC_Write_Sol_Cell_Integer(fid, "cell_index_j", cell_j.flatten(order='F'))
+    iric.cg_iRIC_Write_Sol_Cell_Integer(fid, "cell_index_k", cell_k.flatten(order='F'))
+
+    # i-face i,j,k
+    iric.cg_iRIC_Write_Sol_IFace_Integer(fid, "iface_index_i", iface_i.flatten(order='F'))
+    iric.cg_iRIC_Write_Sol_IFace_Integer(fid, "iface_index_j", iface_j.flatten(order='F'))
+    iric.cg_iRIC_Write_Sol_IFace_Integer(fid, "iface_index_k", iface_k.flatten(order='F'))
+
+    # j-face i,j,k
+    iric.cg_iRIC_Write_Sol_JFace_Integer(fid, "jface_index_i", jface_i.flatten(order='F'))
+    iric.cg_iRIC_Write_Sol_JFace_Integer(fid, "jface_index_j", jface_j.flatten(order='F'))
+    iric.cg_iRIC_Write_Sol_JFace_Integer(fid, "jface_index_k", jface_k.flatten(order='F'))
+
+    # k-face i,j,k
+    iric.cg_iRIC_Write_Sol_KFace_Integer(fid, "kface_index_i", kface_i.flatten(order='F'))
+    iric.cg_iRIC_Write_Sol_KFace_Integer(fid, "kface_index_j", kface_j.flatten(order='F'))
+    iric.cg_iRIC_Write_Sol_KFace_Integer(fid, "kface_index_k", kface_k.flatten(order='F'))
+
 
     # パーティクルの位置の出力
     iric.cg_iRIC_Write_Sol_ParticleGroup_GroupBegin(fid, "particle")
     iric.cg_iRIC_Write_Sol_ParticleGroup_Pos3d(fid, grid_x_arr_3d[i_tmp, j_tmp, k_tmp], grid_y_arr_3d[i_tmp, j_tmp, k_tmp], grid_z_arr_3d[i_tmp, j_tmp, k_tmp])
-    iric.cg_iRIC_Write_Sol_ParticleGroup_Real(fid, "particle_vectorX", resurt_vector_x[i_tmp, j_tmp, k_tmp])
-    iric.cg_iRIC_Write_Sol_ParticleGroup_Real(fid, "particle_vectorY", resurt_vector_y[i_tmp, j_tmp, k_tmp])
-    iric.cg_iRIC_Write_Sol_ParticleGroup_Real(fid, "particle_vectorZ", resurt_vector_z[i_tmp, j_tmp, k_tmp])
-    iric.cg_iRIC_Write_Sol_ParticleGroup_Real(fid, "particle_vector_xX", resurt_vector_x[i_tmp, j_tmp, k_tmp])
+    iric.cg_iRIC_Write_Sol_ParticleGroup_Real(fid, "particle_vectorX", result_vector_x[i_tmp, j_tmp, k_tmp])
+    iric.cg_iRIC_Write_Sol_ParticleGroup_Real(fid, "particle_vectorY", result_vector_y[i_tmp, j_tmp, k_tmp])
+    iric.cg_iRIC_Write_Sol_ParticleGroup_Real(fid, "particle_vectorZ", result_vector_z[i_tmp, j_tmp, k_tmp])
+    iric.cg_iRIC_Write_Sol_ParticleGroup_Real(fid, "particle_vector_xX", result_vector_x[i_tmp, j_tmp, k_tmp])
     iric.cg_iRIC_Write_Sol_ParticleGroup_Real(fid, "particle_vector_xY", 0.0)
     iric.cg_iRIC_Write_Sol_ParticleGroup_Real(fid, "particle_vector_xZ", 0.0)
     iric.cg_iRIC_Write_Sol_ParticleGroup_Real(fid, "particle_vector_yX", 0.0)
-    iric.cg_iRIC_Write_Sol_ParticleGroup_Real(fid, "particle_vector_yY", resurt_vector_y[i_tmp, j_tmp, k_tmp])
+    iric.cg_iRIC_Write_Sol_ParticleGroup_Real(fid, "particle_vector_yY", result_vector_y[i_tmp, j_tmp, k_tmp])
     iric.cg_iRIC_Write_Sol_ParticleGroup_Real(fid, "particle_vector_yZ", 0.0)
     iric.cg_iRIC_Write_Sol_ParticleGroup_Real(fid, "particle_vector_zX", 0.0)
     iric.cg_iRIC_Write_Sol_ParticleGroup_Real(fid, "particle_vector_zY", 0.0)
-    iric.cg_iRIC_Write_Sol_ParticleGroup_Real(fid, "particle_vector_zZ", resurt_vector_z[i_tmp, j_tmp, k_tmp])
+    iric.cg_iRIC_Write_Sol_ParticleGroup_Real(fid, "particle_vector_zZ", result_vector_z[i_tmp, j_tmp, k_tmp])
     iric.cg_iRIC_Write_Sol_ParticleGroup_GroupEnd(fid)
 
     # コンソールに計算進捗を出力
