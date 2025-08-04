@@ -27,7 +27,7 @@ fid = iric.cg_iRIC_Open(cgns_name, iric.IRIC_MODE_MODIFY)
 # =============================================================================
 
 # CGNSをオープン
-# fid = iric.cg_iRIC_Open("./project/Case1.cgn", iric.IRIC_MODE_MODIFY)
+# fid = iric.cg_iRIC_Open("C:/Users/k-hoshino/Desktop/iRIC work space/3D_debug/Case1.cgn", iric.IRIC_MODE_MODIFY)
 
 # 分割保存したい場合はこれを有効にする
 # os.environ['IRIC_SEPARATE_OUTPUT'] = '1'
@@ -106,13 +106,13 @@ node_i, node_j, node_k = np.indices((isize, jsize, ksize))
 cell_i, cell_j, cell_k = np.indices((isize-1, jsize-1, ksize-1))
 
 # i-face用 [isize, jsize-1, ksize]
-iface_i, iface_j, iface_k = np.indices((isize, jsize-1, ksize))
+iface_i, iface_j, iface_k = np.indices((isize, jsize-1, ksize-1))
 
 # j-face用 [isize-1, jsize, ksize]
-jface_i, jface_j, jface_k = np.indices((isize-1, jsize, ksize))
+jface_i, jface_j, jface_k = np.indices((isize-1, jsize, ksize-1))
 
 # k-face用 [isize, jsize, ksize-1]
-kface_i, kface_j, kface_k = np.indices((isize, jsize, ksize - 1))
+kface_i, kface_j, kface_k = np.indices((isize-1, jsize-1, ksize))
 
 # ベクトルはx方向はインデックスi/isize、y方向はインデックスj/jsize、z方向はインデックスk/ksize
 result_vector_x = np.zeros((isize, jsize, ksize), dtype=np.float64)
